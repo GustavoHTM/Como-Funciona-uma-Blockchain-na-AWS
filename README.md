@@ -67,6 +67,8 @@ A comunicação com a blockchain será intermediada pela AWS, envolvendo os segu
 2. **Lambda Function**: Configura e valida a requisição, autentica o usuário e interage com a blockchain.
 3. **Blockchain**: Armazena e replica os registros na rede.
 
+![Blockchain-Workflux](blockchain-workflux.png)
+
 ### Tipos de Ações
 
 - **Invoke**: Armazena informações na blockchain. A resposta inclui o número do bloco onde os dados foram registrados.
