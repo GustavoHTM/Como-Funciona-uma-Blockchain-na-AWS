@@ -4,6 +4,13 @@
 
 Para implementar uma solução de blockchain utilizando AWS, vamos usar um EC2 para executar os contêineres Docker que irão gerenciar nós e membros da blockchain. Este guia irá cobrir a configuração do EC2, a criação dos contêineres Docker e a integração com outros serviços AWS para garantir uma comunicação eficiente e segura.
 
+# Introdução ao Blockchain e Livro-Razão Distribuído
+
+Antes de começar a configurar a sua aplicação blockchain, é importante entender alguns conceitos fundamentais. Uma blockchain é um tipo de livro-razão distribuído que registra todas as transações realizadas em uma rede de forma imutável e transparente. Cada bloco na cadeia contém um conjunto de transações, e esses blocos são ligados uns aos outros, formando uma cadeia.
+
+## Blockchain como um Livro-Razão Distribuído
+Uma blockchain funciona como um livro-razão (ledger) distribuído, onde todos os participantes da rede (nós) têm uma cópia idêntica desse livro. Isso garante que todas as transações sejam verificáveis e que nenhuma entidade única controle a rede.
+
 ### Canais na Blockchain
 
 Um canal (ou *channel*) na blockchain é uma sub-rede de comunicação onde transações e dados são compartilhados de forma isolada entre os membros autorizados. Em essência, ele permite que diferentes grupos de membros dentro da mesma rede de blockchain tenham um livro-razão compartilhado, mas independente, garantindo privacidade e controle sobre quem pode ver e interagir com os dados.
@@ -29,6 +36,16 @@ Os membros são usuários da blockchain e têm a capacidade de realizar processo
 
 ### Nó
 Os nós são responsáveis por armazenar e replicar o "livro razão" da blockchain. Normalmente, um nó gerencia um único canal, onde todas as informações da blockchain são armazenadas e replicadas. O livro razão é essencialmente uma cópia do estado da blockchain, garantindo que todos os nós tenham uma visão consistente dos dados.
+
+# Diferenciação entre Membros e Nós
+
+Na arquitetura de blockchain, é crucial entender a diferença entre membros e nós:
+
+- **Membros:** Representam entidades ou organizações dentro da rede blockchain. Cada membro pode ter um ou mais nós associados a ele.
+  
+- **Nós:** São os componentes que realizam transações e mantêm uma cópia do livro-razão. Os nós podem ser de diferentes tipos, como nós de validação ou nós de peer.
+
+Essa distinção é fundamental, pois influencia como as transações são gerenciadas e validadas dentro da rede.
 
 ## Estrutura de Diretórios e Arquivos
 
