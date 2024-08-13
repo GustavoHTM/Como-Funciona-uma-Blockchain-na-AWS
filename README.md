@@ -4,6 +4,24 @@
 
 Para implementar uma solução de blockchain utilizando AWS, vamos usar um EC2 para executar os contêineres Docker que irão gerenciar nós e membros da blockchain. Este guia irá cobrir a configuração do EC2, a criação dos contêineres Docker e a integração com outros serviços AWS para garantir uma comunicação eficiente e segura.
 
+### Canais na Blockchain
+
+Um canal (ou *channel*) na blockchain é uma sub-rede de comunicação onde transações e dados são compartilhados de forma isolada entre os membros autorizados. Em essência, ele permite que diferentes grupos de membros dentro da mesma rede de blockchain tenham um livro-razão compartilhado, mas independente, garantindo privacidade e controle sobre quem pode ver e interagir com os dados.
+
+#### Por que Usar Canais?
+
+- **Segurança e Privacidade:** Os canais permitem que apenas membros específicos tenham acesso a determinadas transações e dados. Isso é crucial para manter a privacidade em ambientes onde diferentes organizações compartilham a mesma infraestrutura de blockchain.
+  
+- **Isolamento de Transações:** Cada canal mantém seu próprio livro-razão, o que significa que as transações em um canal não afetam ou se misturam com as transações em outro. Isso reduz o risco de conflitos e mantém a integridade dos dados.
+
+#### Quantos Canais Usar?
+
+- **1 Canal (Melhor para Sistemas Simples):** Para a maioria dos sistemas simples, um único canal é a solução mais eficiente. Ele simplifica a arquitetura, reduz a complexidade na gestão e facilita a auditoria, pois todas as transações estão centralizadas em um único livro-razão.
+  
+- **Vários Canais (Necessário para Casos Complexos):** Em sistemas mais complexos, onde diferentes partes precisam acessar e processar dados de forma independente, ou onde há requisitos rigorosos de privacidade, pode ser vantajoso criar múltiplos canais. Cada canal pode ser personalizado para atender às necessidades específicas de um grupo de membros ou de um tipo específico de transação.
+
+Em resumo, a escolha do número de canais depende das necessidades do sistema. Para sistemas simples e diretos, um único canal é normalmente a melhor solução. Já em sistemas complexos, onde a segregação de dados e a privacidade são cruciais, múltiplos canais podem ser necessários.
+
 ## Tipos de Componentes Blockchain
 
 ### Membro
